@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+:root {
+  --bg-main: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Radio Canada Big", sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-main);
+  padding: 0 30px;
+  border-bottom: 1px solid #0ff;
+  color: #0ff;
+}
+.navbar img {
+  height: 70px;
+  padding-top: 10px;
+}
+.navbar_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-weight: 700;
+}
+.navbar_list a {
+  /* color: #4effc0; */
+  color: #0ff;
+}
+.navbar_list_cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+#hamburger {
+  display: none;
+}
+.hero_container {
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero_container img {
+  height: calc(100vh - 80px);
+}
+.hero_img {
+  width: 50%;
+  height: calc(100vh - 80px);
+}
+.hero_title {
+  height: calc(100vh - 80px);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  letter-spacing: 0.25em;
+  text-align: center;
+}
+.neon {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+    0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+}
