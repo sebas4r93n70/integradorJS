@@ -5,46 +5,75 @@
     <link rel="shortcut icon" href="/favicon/icon_mnk.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/animacion.css">
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Gamer MNK</title>
   </head>
   <body>
-    <nav class="navbar">
-      <!-- <img src="/img/hero_gamer_rbg_gray.png" alt> -->
-      <img src="/img/icon2_mnk.png" alt>
+    <main class="main">
+      <nav class="navbar">
+        <!-- <img src="/img/hero_gamer_rbg_gray.png" alt> -->
+        <img src="/img/icon2_mnk.png" alt>
 
-      <i id="hamburger" class="fa fa-bars" aria-hidden="true"></i>
+        <i id="hamburger" class="fa fa-bars" aria-hidden="true"></i>
 
-      <div class="navbar_list_cart">
-        <ul class="navbar_list">
-          <li><a href>Iniciar Seción</a></li>
-          <li><a href>Registrarse</a></li>
-          <li><a href>Juegos</a></li>
-          <li><a href>Guia</a></li>
-          <li><a href>About</a></li>
-        </ul>
-        <i id="cart" class="fa fa-shopping-cart" aria-hidden="true"></i>
-      </div>
+        <div class="navbar_list_cart">
+          <ul class="navbar_list">
+            <li><a href>Iniciar Seción</a></li>
+            <li><a href>Registrarse</a></li>
+            <li><a href="#juegos">Juegos</a></li>
+            <li><a href>Guia</a></li>
+            <li><a href>About</a></li>
+          </ul>
+          <i id="cart" class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </div>
 
-    </nav>
-    <section class="hero_container">
-      <div class="hero_title neon">
-        <h1> GAMER MNK</h1>
-      </div>
-      <div class="hero_img">
-        <img src="/img/hero_gamer_rbg_gray.png" alt>
-      </div>
-      <!-- <img src="/img/mnk_hero_gamepad.jpg" alt> -->
-    </section>
-    <section class="products_container">
-      <div class="nav_filter">
+      </nav>
+      <section class="hero_container">
+        <div class="hero_title neon-text">
+          <h1> GAMER MNK</h1>
+        </div>
+        <div class="hero_img">
+          <img src="/img/hero_gamer_rbg_gray.png" alt>
+        </div>
+        <!-- <img src="/img/mnk_hero_gamepad.jpg" alt> -->
+      </section>
+      <section class="products_container">
+        <div class="nav_filter">
+          <form class="form_filter">
+            <input class="input_search" autocomplete="o" title="Busca tu juego"
+              type="text"
+              placeholder="Busca tu juego">
+            <button class="btn_search" type="submit" title="Buscar"><i
+                class="fa fa-search"
+                aria-hidden="true"></i>
+            </button>
+          </form>
+          <div class="btns">
+            <button class="btn_category btn_active"
+              data-category="all" title="Todos los juegos">TODOS</button>
+            <button class="btn_category"
+              data-category="Shooter" title="Juegos FPS">SHOOTER</button>
+            <button class="btn_category"
+              data-category="MMORPG"
+              title="Juegos de Rol Multi-player">MOBA</button>
+            <button class="btn_category"
+              data-category="Card"
+              title="Juegos de Tarjetas">CARD</button>
+            <button class="btn_category"
+              data-category="Strategy"
+              title="Juegos de Estrategia">ESTRATEGIA</button>
+          </div>
+        </div>
+        <div id="juegos" class="cards_container">
 
-      </div>
-    </section>
-    <section class="about_container"></section>
-    <footer class="footer"></footer>
+        </div>
+      </section>
+      <section class="about_container"></section>
+      <footer class="footer"></footer>
 
-    <script type="module" src="/main.js"></script>
+      <script type="module" src="/main.js"></script>
+    </main>
   </body>
 </html>
