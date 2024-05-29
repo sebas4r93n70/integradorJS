@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
 :root {
   --bg-main: black;
+  --bg-card: #5e6472;
   --first-color: #0ff;
   --contrast-color: #7afc34;
 }
@@ -31,6 +32,15 @@ body {
   height: 70px;
   padding-top: 10px;
 }
+.navbar_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5em;
+  font-style: italic;
+  gap: 25px;
+  letter-spacing: 1em;
+}
 .navbar_list {
   display: flex;
   justify-content: center;
@@ -52,6 +62,9 @@ body {
   gap: 25px;
   font-size: 1.2em;
   cursor: pointer;
+}
+.navbar_list_cart i:hover {
+  color: var(--contrast-color);
 }
 #hamburger {
   display: none;
@@ -118,7 +131,7 @@ body {
 }
 
 /* neon */
-/* Products container */
+/* Games container */
 /* Navbar Filter */
 .nav_filter {
   width: 100%;
@@ -138,11 +151,18 @@ body {
   align-items: center;
   gap: 5px;
 }
+.form_filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .input_search {
   width: 280px;
   height: 35px;
   /* border-radius: 10px; */
   text-align: center;
+  transform: skew(-20deg);
 }
 .btn_search {
   font-weight: 700;
@@ -251,6 +271,9 @@ body {
   max-height: 170px;
   overflow: hidden;
 }
+.info-card strong {
+  font-size: 1.2em;
+}
 .btn-add-card {
   width: 90px;
   height: 30px;
@@ -267,4 +290,14 @@ body {
 .btn-add-card i {
   font-size: 1.5em;
   font-weight: 700;
+}
+/* About */
+.about_info {
+  background-color: var(--bg-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  color: var(--bg-card);
 }
