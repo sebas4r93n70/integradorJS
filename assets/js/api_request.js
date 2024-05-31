@@ -1,6 +1,6 @@
 export const gamesFetch = async () => {
   try {
-    const res = await fetch("/assets/dataBase/dataBaseGames.json");
+    const res = await fetch("/dataBase/dataBaseGames.json");
     const data = await res.json();
     let dataArreglo = [...data];
     // const dar = dataArreglo.map((dato) => dato.genre);
