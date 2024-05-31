@@ -16,6 +16,7 @@
 body {
   overflow-x: hidden;
 }
+
 /* Navbar */
 .navbar {
   width: 100%;
@@ -291,6 +292,44 @@ body {
   font-size: 1.5em;
   font-weight: 700;
 }
+.btn_cards_arrows {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--bg-card);
+  font-weight: 700;
+  font-size: 1.5;
+}
+.arrow {
+  width: 90px;
+  height: 30px;
+  background: linear-gradient(
+    135deg,
+    transparent 18%,
+    var(--contrast-color) 18%,
+    var(--contrast-color) 82%,
+    transparent 18%
+  );
+  border: 0;
+  cursor: pointer;
+}
+.out {
+  cursor: none;
+  background: linear-gradient(
+    135deg,
+    transparent 18%,
+    rgb(145, 128, 128) 18%,
+    rgb(145, 128, 128) 82%,
+    transparent 18%
+  );
+}
+.btn_cards_arrows i {
+  font-size: 1.5em;
+  font-weight: 700;
+}
 /* About */
 .about_info {
   background-color: var(--bg-main);
@@ -300,4 +339,11 @@ body {
   flex-direction: column;
   padding: 50px;
   color: var(--bg-card);
+  letter-spacing: 0.15em;
+}
+.about_info p::first-letter {
+  font-size: 2.2em;
+}
+.none_anything {
+  display: none;
 }

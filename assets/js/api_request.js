@@ -1,4 +1,4 @@
-export const getGamesFetch = async () => {
+export const gamesFetch = async () => {
   try {
     const res = await fetch("/assets/dataBase/dataBaseGames.json");
     const data = await res.json();
