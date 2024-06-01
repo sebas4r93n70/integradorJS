@@ -68,18 +68,20 @@
               title="Juegos de Tarjetas">CARD</button>
             <button class="btn_category"
               data-category="Strategy"
-              title="Juegos de Estrategia">ESTRATEGIA</button>
+              title="Juegos de Estrategia">STRATEGIA</button>
           </div>
         </div>
         <div id="juegos" class="cards_container">
           <!-- render cards JS -->
         </div>
         <div class="btn_cards_arrows">
-          <button id="left" class="arrow out"><i class="fa fa-arrow-left"
+          <button data-arrow="left" class="arrow out"><i data-arrow="left"
+              class="fa fa-arrow-left"
               aria-hidden="true"></i>
           </button>
           <p id="number_page"></p>
-          <button id="right" class="arrow"><i class="fa fa-arrow-right"
+          <button data-arrow="right" class="arrow"><i data-arrow="right"
+              class="fa fa-arrow-right"
               aria-hidden="true"></i>
           </button>
         </div>

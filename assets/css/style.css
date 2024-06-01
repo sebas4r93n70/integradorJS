@@ -72,6 +72,8 @@ body {
 }
 /* Hero / Portada */
 .hero_container {
+  width: 100%;
+  height: 100vh;
   background-color: #000000;
   display: flex;
   justify-content: space-between;
@@ -105,7 +107,7 @@ body {
 .neon-text {
   background: #000;
   color: #fff;
-  font-size: 7em;
+  font-size: 6em;
   font-weight: bold;
   text-align: center;
   overflow: hidden;
@@ -140,26 +142,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
   padding: 0 30px;
   background-color: var(--bg-main);
   border-top: 1px solid var(--first-color);
   /* border-bottom: 1px solid var(--first-color); */
 }
 .btns {
+  width: 75%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
 }
 .form_filter {
+  width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 .input_search {
-  width: 280px;
+  width: 80%;
   height: 35px;
   /* border-radius: 10px; */
   text-align: center;
@@ -167,7 +171,7 @@ body {
 }
 .btn_search {
   font-weight: 700;
-  width: 60px;
+  width: 20%;
   height: 35px;
   color: #000000;
   background-color: var(--first-color);
@@ -188,7 +192,7 @@ body {
 .btn_category {
   font-weight: 700;
   font-size: 1em;
-  width: 150px;
+  width: 20%;
   height: 35px;
   color: #000000;
   /* background-color: var(--first-color); */

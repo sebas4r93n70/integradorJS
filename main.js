@@ -7,9 +7,13 @@ const formFilter = document.querySelector(".form_filter");
 const inputSearch = document.querySelector(".input_search");
 const numberPage = document.getElementById("number_page");
 const arrowsBtns = document.querySelector(".btn_cards_arrows");
+const navFilter = document.querySelector(".nav_filter");
+const arrow = document.querySelectorAll(".arrow");
 
 // NodeLIST / HTMLCollection to ARRAY
+
 const btnCategoryList = [...btnCategory];
+const arrosList = [...arrow];
 // CONSOLEOS : )
 
 // App State
@@ -17,8 +21,8 @@ const appState = {
   currentCategory: "all",
   page: 0,
   totalPage: null,
-  cantCards: 3,
-  gamesArrayFinal: [],
+  cantCards: 4,
+  inputSearchValue: null,
 };
 
 // Funciones
@@ -78,6 +82,7 @@ const filterGamesBtn = async (e) => {
     return;
   }
   appState.currentCategory = e.target.dataset.category;
+  appState.page = 0;
   bntActive(e);
   arrowsBtns.classList.remove("none_anything");
   const dataGamesChunk = (await _).chunk(
@@ -86,7 +91,8 @@ const filterGamesBtn = async (e) => {
   );
   appState.totalPage = dataGamesChunk.length;
   numPage(appState.page);
-  scrollSize(765);
+  document.documentElement.clientHeight;
+  scrollSize(document.documentElement.clientHeight);
   console.log(appState);
   return renderCard(dataGamesChunk[appState.page]);
 };
@@ -98,11 +104,13 @@ const handledSearch = async (e) => {
     cleanBtns();
     cardsContainer.innerHTML =
       "DEBES INGRESAR AUNQUE SEA 3 LETRAS PARA OBTENER BUENOS RESULTADOS";
+    scrollSize(document.documentElement.clientHeight);
+
     return;
   }
   let games = await gamesFetch();
-  let gamesSearch = [];
-  gamesSearch = games.filter((game) =>
+  // let gamesSearch = [];
+  let gamesSearch = games.filter((game) =>
     game.title.toLowerCase().includes(inputValue.toLowerCase())
   );
 
@@ -116,35 +124,65 @@ const handledSearch = async (e) => {
     cleanBtns();
     formFilter.reset();
     inputSearch.blur();
-    scrollSize(765);
+    scrollSize(document.documentElement.clientHeight);
     return;
   }
 
   const dataGamesChunk = (await _).chunk(gamesSearch, appState.cantCards);
   appState.currentCategory = "handled";
   appState.totalPage = gamesSearch.length;
+  appState.inputSearchValue = inputValue;
   numPage(appState.page);
   arrowsBtns.classList.remove("none_anything");
-  scrollSize(765);
+  scrollSize(document.documentElement.clientHeight);
   cleanBtns();
   formFilter.reset();
   inputSearch.blur();
-
+  console.log(appState);
   renderCard(dataGamesChunk[appState.page]);
 };
 
 const loadWindow = async () => {
-  const dataGamesChunk = (await _).chunk(
+  let dataGames = await getGamesByGenre(appState.currentCategory);
+  let dataGamesChunk = (await _).chunk(dataGames, appState.cantCards);
+  numPage(appState.page);
+  appState.totalPage = dataGames.length;
+  return renderCard(dataGamesChunk[appState.page]);
+};
+const loadDataGamesByPage = async (e) => {
+  // console.log(e.target);
+  if (e.target.classList.contains("out")) {
+    return;
+  }
+  const dataGames = (await _).chunk(
     await getGamesByGenre(appState.currentCategory),
     appState.cantCards
   );
-  numPage(appState.page);
-  return renderCard(dataGamesChunk[appState.page]);
+  appState.totalPage = dataGames.length;
+  if (
+    appState.page + 1 === appState.totalPage &&
+    !arrow[1].classList.contains("out")
+  ) {
+    arrow[1].classList.add("out");
+    return;
+  }
+
+  if (e.target.dataset.arrow === "right") {
+    appState.page += 1;
+    renderCard(dataGames[appState.page]);
+    numPage(appState.page);
+    console.log(appState);
+  } else if (e.target.dataset.arrow === "left") {
+    console.log("tada");
+    appState.page -= 1;
+    numPage(appState.page);
+  }
 };
 const init = () => {
   window.addEventListener("DOMContentLoaded", loadWindow());
   btns.addEventListener("click", filterGamesBtn);
   formFilter.addEventListener("submit", handledSearch);
+  arrowsBtns.addEventListener("click", loadDataGamesByPage);
 };
 
 init();
