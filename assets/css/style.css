@@ -72,6 +72,7 @@ body {
 }
 /* Hero / Portada */
 .hero_container {
+  position: relative;
   width: 100%;
   height: 100vh;
   background-color: #000000;
@@ -85,6 +86,10 @@ body {
 .hero_img {
   width: 50%;
   height: calc(100vh - 80px);
+}
+.hero_img img {
+  width: 100%;
+  display: block;
 }
 .hero_title {
   height: calc(100vh - 80px);
@@ -107,7 +112,7 @@ body {
 .neon-text {
   background: #000;
   color: #fff;
-  font-size: 6em;
+  font-size: 5em;
   font-weight: bold;
   text-align: center;
   overflow: hidden;
@@ -321,7 +326,8 @@ body {
   cursor: pointer;
 }
 .out {
-  cursor: none;
+  cursor: not-allowed;
+  pointer-events: none;
   background: linear-gradient(
     135deg,
     transparent 18%,
